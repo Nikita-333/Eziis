@@ -1,0 +1,24 @@
+{% extends 'work/index.html' %}
+
+{% load custom_filters %}
+
+{% block project %}
+<div class="section text-center">
+  <div class="container">
+    <div class="row">
+      {% for result in results %}
+        <div class="col-md-4">
+          <div class="task-card">
+            <div class="task-header">
+              <h4>{{ result.0.file }}</h4>
+            </div>
+            <div class="task-content">
+              <p>{{ result.1|lower|replace:query|safe }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

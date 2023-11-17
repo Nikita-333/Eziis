@@ -1,0 +1,15 @@
+{% extends 'work/index.html' %}
+{% load static %}
+{% block content %}
+<div class="cont" style="text-align: center; color: white;margin-top:80px;">
+  <h2>Метрики</h2>
+  <p>Точность (Precision): {{ precision }}</p>
+  <p>Полнота (Recall): {{ recall }}</p>
+  <p>Аккуратность (Accuracy): {{ accuracy }}</p>
+  <p>Ошибка (Error): {{ error }}</p>
+  <p>F-мера (F-measure): {{ f_measure }}</p>
+  <p>Усредненные метрики: {{ average_metrics }}</p>
+  <img src="{% static 'work/image/trec_graph.png' %}">
+
+</div>
+{% endblock %}
